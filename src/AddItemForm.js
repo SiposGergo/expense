@@ -10,7 +10,6 @@ const schema = yup.object().shape({
 
 export default function AddItemForm({ addNewItem }) {
     async function onSubmit(values, { resetForm }) {
-        console.log('event', values);
         addNewItem({
             ...values,
             isExpense: values.type === "expense",
