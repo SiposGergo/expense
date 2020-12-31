@@ -1,7 +1,7 @@
 import * as yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import React from "react";
-const { v4: uuidv4 } = require('uuid');
+import { v4 as uuidv4 } from 'uuid';
 
 const schema = yup.object().shape({
     name: yup.string().required("Név megadása kötelező!").max(100, "Max 100 karakter!"),
