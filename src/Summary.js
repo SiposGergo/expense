@@ -11,7 +11,7 @@ export default function Summary({ items }) {
     }
 
     useEffect(() => {
-        axios.get('https://api.exchangeratesapi.io/latest?base=HUF')
+        axios.get('https://api.exchangerate.host/latest?base=huf')
             .then(({ data }) => setRates({ ...data.rates }))
             .catch(err => console.err(err.error))
     }, [items])
@@ -23,7 +23,7 @@ export default function Summary({ items }) {
                     Egyenleg
                 </h5>
                 <div>
-                    <Amount color="true" amount={Sum()} />
+                    <Amount colored="true" amount={Sum()} />
                 </div>
                 <div className="d-flex mt-2 w-100 justify-content-between">
                     <Amount currency="USD" amount={rates['USD'] * Sum()} />
